@@ -1,0 +1,134 @@
+Tujuan praktikum instalasi Ubuntu server dan konfigurasi SSH server
+1.	Memahami proses instalasi Ubuntu Server pada virtualbox
+2.	Mempelajari bagaimana konfigurasi SSH Server di Ubuntu
+3.	Memahami penggunaan putty untuk koneksi SSH
+
+B.	Requirement
+1.	Sistem Operasi yang digunakan	: Hp windos 11
+2.	Browser 				: Google Version129.0.6668.10
+3.	Tools yang digunakan 		: Virtualbox, Ubuntu Server, puTTY
+
+
+C.	Dasar Teori
+1.	Virtual Box 
+VirtualBox adalah perangkat lunak virtualisasi yang dikembangkan oleh Oracle Corporation untuk menjalankan beberapa sistem operasi dalam satu komputer melalui mesin virtual. Dengan VirtualBox, pengguna dapat menginstal dan menjalankan sistem operasi lain seperti Ubuntu tanpa mengubah sistem operasi utama pada komputer. Berikut beberapa fitur pada Virtual Box
+•	Virtual Machine – Membuat dan menjalankan sistem operasi secara virtual 
+•	Snapshot – Menyimpan Kondisi Mesin Virtual 
+•	Shared Folder – Berbagi file antara  host dan guest  
+•	Guest Additions – Meningkatkan peforma dan integrasi sistem 
+•	Multiple OS Support – Mendukung berbagai sistem seperti ubuntu, windows dan lainnya
+
+2.	Ubuntu Server
+Ubuntu Server adalah sistem operasi berbasis   yang dirancang khusus untuk kebutuhan server. Sistem ini dikembangkan oleh Canonical Ltd. dan bersifat open source, sehingga dapat digunakan secara gratis serta dikembangkan oleh siapa saja. Ubuntu Server dikenal karena kestabilan, keamanan, dan dukungan komunitas yang luas.
+Berbeda dengan versi desktop, Ubuntu Server tidak menggunakan tampilan grafis (GUI) secara default, melainkan menggunakan command line interface (CLI). Hal ini bertujuan untuk menghemat penggunaan sumber daya sehingga performa server menjadi lebih optimal. Ubuntu Server sering digunakan untuk berbagai layanan seperti web server, database server, file server, dan layanan jaringan lainnya.
+Dalam pengoperasiannya, pengguna harus memahami perintah dasar Linux untuk mengelola sistem, seperti menginstal paket, mengatur jaringan, serta melakukan konfigurasi layanan. Oleh karena itu, pemahaman dasar Linux menjadi sangat penting dalam penggunaan Ubuntu Server.
+Ubuntu Server banyak digunakan dalam dunia jaringan dan administrasi server karena memiliki tingkat keamanan yang baik serta dukungan pembaruan sistem secara berkala. Selain itu, Ubuntu Server juga mendukung berbagai kebutuhan layanan jaringan sehingga sering digunakan pada lingkungan pendidikan maupun perusahaan.
+
+3.	SSH (Secure Shell)
+SSH (Secure Shell) adalah protokol jaringan yang digunakan untuk mengakses dan mengelola server secara jarak jauh dengan aman. SSH memungkinkan pengguna untuk terhubung ke server melalui jaringan dan menjalankan perintah seperti berada langsung di depan server tersebut.
+Keamanan menjadi keunggulan utama SSH karena menggunakan sistem enkripsi untuk melindungi data yang dikirimkan. Dengan demikian, informasi penting seperti username dan password tidak mudah disadap. Salah satu implementasi SSH yang banyak digunakan adalah OpenSSH.
+SSH biasanya berjalan pada port 22 dan mendukung beberapa metode autentikasi, seperti password dan SSH key. Dalam administrasi server, SSH sangat penting karena memungkinkan pengelolaan server secara efisien tanpa harus berada di lokasi fisik server. Dengan SSH, administrator dapat mengatur sistem, mengelola file, serta melakukan pemeliharaan server dari mana saja.
+SSH tidak hanya digunakan untuk remote login, tetapi juga dapat digunakan untuk transfer file secara aman melalui SCP dan SFTP. Dengan adanya enkripsi pada SSH, proses pertukaran data menjadi lebih aman dibandingkan protokol remote lainnya.
+
+4.	PuTTY
+PuTTY adalah aplikasi yang digunakan sebagai SSH client untuk menghubungkan komputer lokal dengan server secara remote. PuTTY banyak digunakan pada sistem operasi Windows karena menyediakan antarmuka sederhana dan mudah digunakan.
+Untuk melakukan koneksi menggunakan PuTTY, pengguna hanya perlu memasukkan alamat IP server, nomor port (biasanya 22), serta memilih jenis koneksi SSH. Setelah terhubung, pengguna dapat login menggunakan username dan password yang telah dibuat pada server.
+PuTTY juga menyediakan berbagai fitur tambahan seperti penyimpanan sesi, konfigurasi SSH key, dan pengaturan tampilan terminal. Dengan adanya PuTTY, proses pengelolaan server menjadi lebih praktis dan fleksibel karena dapat dilakukan dari jarak jauh tanpa harus berada di depan server secara langsung.
+
+
+
+
+
+
+D.	Implementasi 
+1.	Unduh Ubuntu Server  versi 26.04 LTS melalui chrome
+ 
+2.	Lalu lanjutkan dengan mengunduh puTTY  
+3.	Unduh versi puTTY sesuai kapasitas laptop atau komputer
+ 
+4.	Pembuatan VM(Virtual Machine) di virtual box untuk ubuntu server yang telah di unduh
+ 
+5.	Masuk ke bagian hardware untuk menyetting processor dan base memory
+ 
+
+
+
+
+6.	Lalu, masuk  ke bagian hard disk dan setting kapasitasnya sebesar 25.00 GB
+ 
+7.	Lanjutkan pada menu “Network” pada ubuntu server yang telah di unduh dengan menyetting adapter 1 dan adapter 2
+ 
+ 
+8.	Klik “Start” untuk mulai penginstallan ubuntu server. Pilih “Try or Install Ubuntu Server” lalu done dan klik enter
+ 
+9.	Tampilan setelah di enter, tunggu hingga proses selesai
+ 
+10.	Pilih bahasa “English” lalu klik enter
+ 
+
+11.	Proses konfigurasi jaringan. Tunggu hingga alamat IP address muncul, lalu done dan klik enter
+ 
+12.	Pilih done dan klik enter untuk melanjutkan
+ 
+13.	Pilih done dan klik enter untuk melanjutkan
+ 
+
+
+
+
+
+
+
+14.	Pilih done dan klik enter untuk melanjutkan
+ 
+15.	Pilih continue dan klik enter untuk melanjutkan
+ 
+16.	Selanjutnya masuk pada pembuatan akun ubuntu server, pilih done dan klik enter
+ 
+17.	Pilih continue dan klik enter untuk melanjutkan
+ 
+18.	Proses penginstallan SSH server, pilih done lalu enter 
+ 
+19.	Pilih “Reboot Now” lalu enter
+ 
+ 
+20.	Selanjutnya login sesuai username dan password yang telah di buat
+ 
+21.	Lanjutkan dengan menjalankan perintah berikut:
+•	ls
+•	ssh
+•	ifconfig untuk melihat ssh
+•	sudo apt install net-tools untuk menginstall net-tools, lalu enter dan masukkan password
+ 
+22.	Proses menginstall net-tools telah berhasil, lalu klik “clear”
+ 
+23.	Jalankan perintah ifconfig untuk melihat alamat IP address (172.16.45.181) untuk proses konfigurasi ubuntu dengan puTTy
+ 
+24.	Pilih next untuk menjalankan proses penginstallan file puTTY yang telah di unduh sebelumnya
+ 
+25.	Pilih penyimpanan file puTTY sesuai laptop atau komputer, lalu next
+ 
+26.	Klik Install
+ 
+27.	Penginstallan berhasil, lalu klik finish
+ 
+28.	Buka aplikasi puTTY yang telah di install, maka akan muncul tampilan seperti gambar di bawah, lalu masukkan IP address sesuai jaringan yang digunakan pada ubuntu server
+ 
+
+
+
+
+
+
+
+29.	Klik open setelah memasukkan IP address
+ 
+30.	Tampilan puTTy setelah memasukkan IP address yang digunakan. Masukkan username dan password ubuntu lalu enter
+ 
+ 
+31.	Proses konfigurasi ubuntu dengan puTTY telah berhasil
+ 
+
+
+
+
