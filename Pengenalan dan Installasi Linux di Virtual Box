@@ -1,0 +1,145 @@
+D.	Implementasi 
+1.	Unduh VirtualBox terlebih dahulu melalu Chrome
+ 
+2.	Klik Windows hosts dibagian VirtualBox platform packages
+ 
+3.	Saat berhasil di unduh, lalu buka VirtualBox. Pastikan tampilan sesuai dengan gambar di bawah dan klik next
+ 
+4.	Klik “I accept the terms in the License Agreement” lalu klik next
+ 
+5.	Klik next, untuk melanjutkan
+ 
+6.	Klik “yes” hingga diarahkan ke red to install interface
+ 
+7.	Klik “yes”
+ 
+8.	Klik next, untuk melanjutkan
+ 
+9.	Berikutnya VirtualBox siap untuk diinstall, klik “Install”
+ 
+10.	Tunggu hingga proses instalasi selesai, lalu klik next
+ 
+11.	VirtualBox telah berhasil diinstall, klik “Finish”
+ 
+12.	Langkah berikutnya, ketik “ubuntu download” pada laman pencarian di Chrome
+ 
+13.	Lalu klik download ubuntu 24.04.4 LTS
+ 
+14.	Buka VirtualBox yang telah diinstall, lalu klik “new”. Masukkan nama “ubuntu linux”, lanjutkan pada bagian ISO Image dengan memasukkan ubuntu yang telah didownload. Untuk OS-nya “Linux”, OS Distribution “Ubuntu”, dan OS Version “Ubuntu (64-bit)”
+ 
+ 
+15.	Lanjutkan ke bagian hardware lalu setting base memorinya ke 4 atau 8, sesuai dengan kapasitas laptop
+ 
+16.	Kemudian masuk ke bagian hard disk lalu setting kapasitasnya sebesar 25.00 GB (Tergantung kapasitas laptop), lalu klik “Finish”
+ 
+
+17.	Klik ubuntu yang telah didownload, pilih menu “Display” lalu setting Video memorynya sebesar  128 MB
+ 
+18.	Klik “star” maka akan muncul tampilan berikut ini, pilih “bahasa indonesia” dan klik next
+ 
+19.	Next
+ 
+
+
+
+
+20.	Pilih Indonesian (Arab Melayu, phonetic), lalu klik next
+ 
+21.	Pilih “saya tidak ingin tersambung ke internet saat ini”, lalu next
+ 
+22.	Pilih “pasang ubuntu”, lalu next
+ 
+23.	Pilih “pemasangan interaktif”, lalu next
+ 
+
+24.	Pilih pilihan default lalu klik next
+ 
+25.	Dipembaruan dan perangkat lunak lainnya, pilih opsi pilihan default kemudian klik next
+ 
+26.	Pilih opsi hapus disk dan pasang ubuntu kemudian klik next
+ 
+
+
+
+
+
+27.	Pada laman ini buatlah akun dan password
+ 
+28.	Pilih zona waktu berada di Asia, kemudian klik next dan mulai memasang
+ 
+29.	Opsi terakhir, klik “pasang”
+ 
+30.	Proses penginstalan ubuntu
+ 
+
+31.	Proses pemasangan ubuntu
+ 
+32.	Masuk dengan akun yang telah dibuat sebelumnya
+ 
+33.	Tampilan pertama layar ubuntu setelah terinstal
+ 
+34.	Pilih opsi lewati sekarang dan tekan tombol lewati
+ 
+35.	Pada laman ini pilih opsi “ya”. Bagikan data sistem dengan tim ubuntu lalu klik tombol selanjutnya dan selesai
+ 
+36.	Tampilan aplikasi ubuntu, klik selesai
+ 
+37.	Ubuntu linux siap digunakan.
+ 
+
+
+
+
+
+
+
+	NAVIGASI TERMINAL DAN PERINTAH DASAR LINUX
+1.	LS (list Directory)
+•	ls -> untuk menampilkan isi directory/folder
+•	ls -l -> untuk menampilkan isi directory secara detail, baik dari hak akses pemilik hingga waktu modifikasi file.
+•	ls -la -> dapat digunakan untuk menampilkan isi directory yang berstatus disembunyikan
+ 
+2.	CD (Change Directory)
+Yang digunakan untuk berpindah-pindah antar directory
+ 
+
+
+
+
+
+3.	PWD (Print Working Directory)
+Yang digunakan untuk menampilkan lokasi directory saat ini
+		      
+
+4.	Mkdir (Make Directory)
+Yang digunakan untuk membuat folder/directory baru
+ 
+
+
+
+
+
+
+
+
+
+
+5.	Touch -> yang digunakan untuk membuat file baru
+ 
+6.	Rm (Remove)
+Yang digunakan untuk menghapus file dari sistem
+ 
+
+7.	Rm -r (Remove Recursive)
+Yang digunakan untuk menghapus directory dan seluruh isinya
+ 
+8.	Cp (Copy)
+Yang digunakan untuk menyalin file atau directory dari satu lokasi ke lokasi lain
+ 
+9.	Mv (Move)
+Yang digunakan untuk memindahan file atau directory dari satu lokasi ke lokasi lain, serta untuk mengganti nama (rename) file atau direbtory
+ 
+ 
+10.	Cat (Concatenate)
+Yang digunakan untuk mengakses konten atau teks dari isi sebuah file
+
