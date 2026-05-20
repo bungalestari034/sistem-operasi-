@@ -1,0 +1,119 @@
+D.	Implementasi
+A.	Cara menggunakan Variabel di Shell Scripting dan Automasi
+1.	Mendeklarasikan dan Menggunakan Variabel
+•	Variabel “nama” dan “umur” disimpan dengan nilai yang bisa dipanggil menggunakan “$nama” atau “$umur”.
+•	Memberian nilai untuk tiap variabel yang telah di buat sesuai dengan kondisi pengguna
+	 
+2.	Mengambil Input dari Pengguna
+•	“read” digunakan untuk mengambil input dari pengguna dan menyimpannya ke dalam variabel. 
+•	echo “masukkan nama anda:” menampilkan pesan untuk meminta pengguna mengisi nama. 
+•	“read nama” membuat program menunggu sampai pengguna mengetik, lalu menyimpan input tersebut ke variabel. 
+ 
+3.	Operasi Matematika dengan Variabel
+•	x=10 → Menyimpan nilai 10 ke dalam variabel x 
+•	y=5 → Menyimpan nilai 5 ke dalam variabel y 
+•	hasil=$((x + y)) → Menggunakan (()) untuk melakukan operasi penjumlahan antara x dan y, lalu hasil penjumlahannya akan disimpan dalam variabel hasil.
+ 
+
+B.	Cara menggunakan kondisi di shell Scripting dan Automasi
+1.	Menggunakan If-Else
+•	Variabel Angka disimpan dengan nilai 10. 
+•	If [$angka -gt 5] → Memeriksa apakah angka lebih besar dari 5 . -gt berarti "greater than" atau "lebih besar dari”.
+•	Jika kondisi [$angka -gt 5] benar, maka kondisi if akan di eksekusi. Jika kondisi salah, maka blok else yang akan di eksekusi.
+•	Fi menandai akhir dari blok if .
+ 
+2.	Menggunakan If-Elif-Else
+•	Variabel nilai disimpan dengan nilai 80. 
+•	Percabangan if → Memeriksa apakah nilai lebih besar atau sama dengan 90. -ge → Operator perbandingan yang berarti "greater than or equal to" (lebih besar atau sama dengan). Jika kondisi benar (nilai ≥ 90), maka program akan menampilkan "grade: A". 
+•	Elif (else if) → Jika kondisi pertama salah, program memeriksa kondisi lain: apakah nilai lebih besar atau sama dengan 75. Jika nilai ≥ 75 tetapi < 90, program menampilkan "grade: B". 
+•	Kondisi terakhir → Jika tidak memenuhi salah satu kondisi di atas, maka eksekusi masuk ke blok else. Jika nilai < 75, program menampilkan "grade: C".
+ 
+
+C.	Cara menggunakan perulangan di shell scripting
+1.	Menggunakan Loop 
+•	Loop for → digunakan untuk mengulang angka dari 1 sampai 5{1..5}.
+•	do → Menandai awal dari blok kode yang akan dieksekusi dalam setiap iterasi. Echo “angka saat ini: $angka” → Menampilkan nilai variabel angka di setiap perulangan. 
+•	Done → menandai akhir perulangan. Setelah angka mencapai 5, perulangan berhenti.
+                
+2.	Menggunakan While Loop 
+•	Digunakan untuk perulangan selama kondisi tertentu masih benar. Variabel angka disimpan dengan nilai 1.
+•	While [ $angka -le 5 ] → Perulangan akan berjalan selama kondisi angka ≤ 5 masih benar. -le → Operator perbandingan yang berarti "less than or equal to" (kurang dari atau sama dengan). 
+•	$((angka + 1)) → Menjumlahkan angka dengan 1 di setiap iterasi. 
+ 
+
+
+
+
+D.	Automasi dengan Cron Job
+Cron adalah layanan di Linux untuk menjalankan perintah atau skrip secara otomatis sesuai jadwal.
+1.	Buat Skrip yang Akan Dijalankan
+Buat skrip bernama log_time.sh untuk mencatat waktu eksekusi, lalu tekan Enter.
+ 
+2.	Selanjutnya isi skrip dengan waktu eksekusi yang diperlukan lalu simpan dan keluar (ctrl + o lalu ctrl + x).
+ 
+
+
+
+
+3.	Beri izin eksekusi menggunakan perintah chmod +x ~/log_time.sh lalu tekan Enter.
+ 
+4.	Menjadwalkan Cron Job
+Buka crontab -e lalu tekan Enter untuk melakukan pengeditan.
+ 
+5.	Tambahkan baris * * * * * ~/log_time.sh agar skrip berjalan setiap 1 menit, lalu simpan dan keluar (ctrl + o dan ctrl + x).
+ 
+6.	Memeriksa Apakah Cron Job Berjalan
+Ketik Crontab -l lalu Enter untuk meihat daftar cron job sedang aktif.
+ 
+7.	Cek isi file log: ketik cat ~/log_time.txt lalu tekan Enter, Jika berhasil file akan berisi waktu terbaru setiap menit, menandakan cron job berjalan dengan baik.
+ 
+8.	Jika terjadi kesalahan seperti gambar di bawah ini, perlu dilakukan pengecekkan apakah cron sedang berjalan atau tidak.
+ 
+9.	Cek Apakah Cron Sedang Berjalan
+Memastikan cron aktif dengan mengetik sudo systemctl status cron lalu klik Enter.
+ 
+10.	Masukkan password yang telah dibuat lalu klik Enter.
+ 
+11.	Berikut tampilan program yang menandakan cron job berhasil dibuat.
+ 
+
+E.	Automasi dengan Systemd Timers
+Systemd timers menjalankan unit layanan yang berisi perintah atau skrip yang akan dieksekusi.
+1.	Buat file layanan (service) lalu masukkan password akun yang telah dibuat sesuai dengan gambar berikut dan klik Enter
+ 
+2.	Edit isi file sesuai gambar di bawah ini lalu simpan dan keluar.
+ 
+3.	Buat file Timer (timer)
+Systemd timers mengontrol kapan layanan (service) dijalankan. Gunakan perintah sudo nano /etc/system/system/log_time.timer untuk mengakses system timers.
+ 
+4.	Edit isi file sesuai gambar di bawah ini lalu simpan dan keluar
+ 
+5.	Jalankan perintah berikut untuk mengaktifkan timer lalu klik Enter.
+ 
+6.	Gunakan perintah systemctl list-timers –all untuk melihat status timer sedang aktif lalu tekan Enter.
+ 
+7.	Tampilan saat berhasil melihat status aktif dari systemd timers
+ 
+
+F.	Debugging dan Logging menggunakan journalctl dan dmesg
+1.	Debugging dengan journalctl (Systemd Logs) 
+Journalctl digunakan untuk melihat log sistem (seperti cron, network, dll). Cara aksesnya dengan perintah journalctl --no-pager lalu tekan Enter untuk melihat semua log sistem.
+ 
+ 
+2.	Untuk melihat Filter Log berdasarkan waktu
+ 
+3.	Untuk melihat Log dari layanan tertentu, seperti Log dari layanan cron.
+ 
+4.	Untuk melihat Log Booting terakhir.
+ 
+5.	Untuk menampilkan Log Secara Real-Time (Live Monitoring).
+ 
+6.	Debugging dengan dmesg (Kernel Logs)
+Dmesg digunakan untuk melihat log kernel yang mencatat informasi tentang hardware, driver, dan error sistem. Cara Menggunakan dmesg Ketik sudo journalctl -k untuk menampilkan log kernel yang mencakup Informasi seperti :
+•	Versi kernel yang digunakan (linux version 6.17.0-14-generic). 
+•	Command line yang digunakan saat booting.
+•	CPU yang didukung oleh kernel (Intel, AMD, Hygon, Centaur, zhaoxin).
+•	Firmware Bug terkait dengan frekuensi TSC (Time Stamp Counter).
+•	BIOS-provided physical RAM map, yang menunjukkan area memori yang dapat digunakan.
+ 
+
